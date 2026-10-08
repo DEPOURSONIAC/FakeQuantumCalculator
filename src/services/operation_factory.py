@@ -3,7 +3,7 @@
 # Module
 from ..operations.operation import Operation
 from ..operations.addition import Addition
-from ..operations.soustration import Soustraction
+from ..operations.soustraction import Soustraction
 from ..operations.multiplication import Multiplication
 from ..operations.division import Division
 from ..exceptions.invalid_operation import InvalidOperationException
@@ -33,15 +33,3 @@ class OperationFactory:
             raise InvalidOperationException()
 
         return retour
-
-
-if __name__ == '__main__':
-    # python3 -m src.services.operation_factory
-    """
-        It's the operation factory programm.
-    """
-    factory = OperationFactory()
-
-    addition = factory.create(5, "+", 7)
-
-    print(f"Résultat : {addition.calculate()}")

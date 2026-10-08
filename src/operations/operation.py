@@ -48,14 +48,3 @@ class Operation(ABC):
         Cette méthode doit être implémentée par les classes filles.
         """
         pass
-
-
-
-
-if __name__ == '__main__':
-    # python3 operation.py
-    """
-        It's the operation programm.
-    """
-    
-    ...

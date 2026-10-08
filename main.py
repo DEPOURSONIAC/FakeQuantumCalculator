@@ -14,9 +14,9 @@ def main()-> int:
     factory = OperationFactory()
     calculator = Calculator()
 
-    it_is_works: bool = True
+    is_running: bool = True
 
-    while it_is_works:
+    while is_running:
         try:
             expression = input("Calcul : ")
 
@@ -49,14 +49,14 @@ def main()-> int:
 
         except KeyboardInterrupt:
             print("\nProgramme terminé.")
-            it_is_works = False
+            is_running = False
 
     return 0
 
 if __name__ == '__main__':
     # python3 main.py
     """
-        It's the main programm.
+        It's the main program.
     """
 
     main()

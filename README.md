@@ -159,7 +159,7 @@ L'objectif n'est pas de créer une calculatrice complexe, mais de construire pro
 
 ## Améliorations prévues
 
-- [ ] Finaliser la V1 console
+- [x] Finaliser la V1 console
 - [ ] Améliorer le parsing des expressions
 - [ ] Ajouter davantage de tests
 - [ ] Créer l'interface graphique
