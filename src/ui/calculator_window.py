@@ -132,9 +132,14 @@ class CalculatorWindow(ctk.CTk):
             button_color = "#303039"
 
         # Création du bouton
-        button: ctk.CTkButton = ctk.CTkButton(self.buttons_frame, text=text, font=("Arial", 18, "bold"), fg_color=button_color, hover_color="#506FA5", corner_radius=10, height=40,)
+        button: ctk.CTkButton = ctk.CTkButton(self.buttons_frame,command=lambda: self._on_button_click(text),  text=text, font=("Arial", 18, "bold"), fg_color=button_color, hover_color="#506FA5", corner_radius=10, height=40,)
         button.grid( row=row, column=column, padx=4, pady=4, sticky="nsew",)
 
+    def _on_button_click(self, value: str) -> None:
+        """
+        Gère le clic sur un bouton de la calculatrice.
+        """
+        print(f"Bouton cliqué : {value}")
 
 # Main
 if __name__ == "__main__":
