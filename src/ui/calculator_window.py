@@ -15,6 +15,9 @@ class CalculatorWindow(ctk.CTk):
         """
         super().__init__()
 
+        # Expression mathématique
+        self.__expression: str = ""
+
         # Configuration de la fenêtre
         self.title("Calculatrice V2")
         self.geometry("850x520")
@@ -88,7 +91,7 @@ class CalculatorWindow(ctk.CTk):
         self.expression_label.pack(fill="x", padx=15, pady=(12, 5),)
 
         # Résultat du user
-        self.result_label: ctk.CTkLabel = ctk.CTkLabel(self.display_frame, text="0", font=("Arial", 28, "bold"), text_color="#FFFFFF", anchor="e",)
+        self.result_label: ctk.CTkLabel = ctk.CTkLabel(self.display_frame, text='0', font=("Arial", 28, "bold"), text_color="#FFFFFF", anchor="e",)
         self.result_label.pack( fill="x", padx=15, pady=(5, 12),)
 
     def _create_buttons(self) -> None:
@@ -108,8 +111,8 @@ class CalculatorWindow(ctk.CTk):
         # Organisation fixe des boutons
         buttons: list[list[str]] = [
             ["C", "<-", "(", ")"],
-            ["7", "8", "9", "÷"],
-            ["4", "5", "6", "×"],
+            ["7", "8", "9", "/"],
+            ["4", "5", "6", "*"],
             ["1", "2", "3", "−"],
             ["0", ".", "=", "+"],
         ]
@@ -121,7 +124,7 @@ class CalculatorWindow(ctk.CTk):
 
     def _create_button(self, text: str, row: int, column: int,) -> None:
         """
-        Crée un bouton et le place dans la grille.
+            Crée un bouton et le place dans la grille.
         """
         # Couleur des boutons
         if text in ["÷", "×", "−", "+", "="]:
@@ -136,10 +139,27 @@ class CalculatorWindow(ctk.CTk):
         button.grid( row=row, column=column, padx=4, pady=4, sticky="nsew",)
 
     def _on_button_click(self, value: str) -> None:
-        """
-        Gère le clic sur un bouton de la calculatrice.
-        """
-        print(f"Bouton cliqué : {value}")
+        """Gère les clics sur les boutons de la calculatrice."""
+
+        if value == "C":
+            self.__expression = ""
+
+        elif value == "<-":
+            self.__expression = self.__expression[:-1]
+
+        elif value == "=":
+            # Le calcul sera après.
+            self.__expression = str(eval(self.__expression))
+
+        else:
+            self.__expression += value
+
+        # Actualiser l'expression affichée
+        self.expression_label.configure(text=self.__expression or "En attente d'un calcul...")
+
+        # Actualiser le résultat affiché
+        self.result_label.configure(text=self.__expression or "0")
+
 
 # Main
 if __name__ == "__main__":
