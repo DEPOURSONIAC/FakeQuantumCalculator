@@ -19,7 +19,6 @@ Ce projet permet de travailler notamment sur :
 - Priorités
 - Interface graphique avec CustomTkinter
 - Gestion d'un historique des calculs
-- Tests unitaires avec `pytest`
 - Gestion des erreurs et validation des expressions
 
 ## Versions
@@ -247,7 +246,7 @@ pyinstaller --noconfirm --clean --windowed --onefile --name "FakeQuantumCalculat
 Depuis la racine du projet,  pour lancer la calculatrice :
 
 ```bash
-chmod +x /dist/FakeQuantumCalculator
+chmod +x dist/FakeQuantumCalculator
  ./dist/FakeQuantumCalculator
 ```
 
