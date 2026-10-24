@@ -14,20 +14,17 @@ def test_calculator_exception() -> None:
 
     assert str(error) == "Erreur de calcul."
 
-
 def test_division_by_zero_exception() -> None:
     error = DivisionByZeroException()
 
     assert isinstance(error, CalculatorException)
     assert str(error) == "Impossible de diviser par zéro."
 
-
 def test_invalid_operation_exception() -> None:
     error = InvalidOperationException()
 
     assert isinstance(error, CalculatorException)
     assert str(error) == "Opération invalide."
-
 
 if __name__ == "__main__":
     # python3 -m tests.test_exceptions

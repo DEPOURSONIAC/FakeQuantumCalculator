@@ -10,9 +10,7 @@ from ..exceptions.invalid_operation import InvalidOperationException
 
 # Class
 class OperationFactory:
-    """
-    Fabrique l'opération correspondant au symbole fourni.
-    """
+    """Fabrique l'opération correspondant au symbole fourni."""
 
     def create(self, nb1: float, operation: str, nb2: float) -> Operation:
         retour: Operation

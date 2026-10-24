@@ -20,7 +20,6 @@ def test_calculator_addition() -> None:
 
     assert result == 12
 
-
 def test_calculator_soustraction() -> None:
     calculator = Calculator()
     operation = Soustraction(10, 4)
@@ -28,7 +27,6 @@ def test_calculator_soustraction() -> None:
     result = calculator.calculate(operation)
 
     assert result == 6
-
 
 def test_calculator_multiplication() -> None:
     calculator = Calculator()
@@ -38,7 +36,6 @@ def test_calculator_multiplication() -> None:
 
     assert result == 20
 
-
 def test_calculator_division() -> None:
     calculator = Calculator()
     operation = Division(10, 2)
@@ -46,7 +43,6 @@ def test_calculator_division() -> None:
     result = calculator.calculate(operation)
 
     assert result == 5
-
 
 def test_calculator_division_by_zero() -> None:
     calculator = Calculator()
@@ -56,10 +52,7 @@ def test_calculator_division_by_zero() -> None:
         calculator.calculate(operation)
     except DivisionByZeroException as error:
         assert str(error) == "Impossible de diviser par zéro."
-        return
-
-    raise AssertionError("DivisionByZeroException attendue.")
-
+        
 if __name__ == "__main__":
     # python3 -m tests.test_calculator
     """

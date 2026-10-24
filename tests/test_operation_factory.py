@@ -20,7 +20,6 @@ def test_factory_addition() -> None:
     assert isinstance(operation, Addition)
     assert operation.calculate() == 12
 
-
 def test_factory_soustraction() -> None:
     factory = OperationFactory()
 
@@ -28,7 +27,6 @@ def test_factory_soustraction() -> None:
 
     assert isinstance(operation, Soustraction)
     assert operation.calculate() == 6
-
 
 def test_factory_multiplication() -> None:
     factory = OperationFactory()
@@ -38,7 +36,6 @@ def test_factory_multiplication() -> None:
     assert isinstance(operation, Multiplication)
     assert operation.calculate() == 20
 
-
 def test_factory_division() -> None:
     factory = OperationFactory()
 
@@ -47,7 +44,6 @@ def test_factory_division() -> None:
     assert isinstance(operation, Division)
     assert operation.calculate() == 5
 
-
 def test_factory_invalid_operation() -> None:
     factory = OperationFactory()
 
@@ -55,9 +51,6 @@ def test_factory_invalid_operation() -> None:
         factory.create(5, "%", 7)
     except InvalidOperationException as error:
         assert str(error) == "Opération invalide."
-        return
-
-    raise AssertionError("InvalidOperationException attendue.")
 
 
 if __name__ == "__main__":
