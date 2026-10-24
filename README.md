@@ -201,8 +201,7 @@ Il constitue également une occasion d'approfondir des notions importantes : tok
 
 ### Pourquoi ne pas utiliser de threads ?
 
-L'utilisation de threads et de mécanismes de synchronisation a été envisagée pendant la conception du projet, mais elle a finalement été écartée(flemme).
-J'avais un DS sur la POO et Threads, j'ai donc voulu me consentré sur la POO.
+L'utilisation de threads et de mécanismes de synchronisation a été envisagée pendant la conception du projet, mais elle a finalement été écartée(flemme) J'avais un DS sur la POO et threads, j'ai donc voulu me consentrer sur la POO.
 
 Le projet privilégie donc une architecture simple, adaptée au besoin réel.
 
@@ -217,7 +216,7 @@ source .venv/bin/activate
 Installer les dépendances nécessaires si elles ne sont pas déjà présentes :
 
 ```bash
-pip install customtkinter pytest
+pip install customtkinter
 ```
 
 Lancer l'application graphique :
@@ -307,8 +306,8 @@ Il ne s'agit donc pas de vibe coding. Ce projet m'a demandé 25 heures de travai
 - [x] Prendre en compte les priorités opératoires
 - [ ] Approfondir et maîtriser le fonctionnement interne du parseur
 - [ ] Renforcer les tests unitaires du parseur
-- [ ] Améliorer la validation des expressions et des cas limites
-- [ ] Vérifier la cohérence entre les différentes couches applicative
+- [x] Améliorer la validation des expressions et des cas limites
+- [x] Vérifier la cohérence entre les différentes couches applicative
 
 ---
 
